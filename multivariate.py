@@ -34,3 +34,5 @@ print est1.pvalues
 print est2.summary().tables[1]
 print "p values"
 print est2.pvalues
+
+print "I am a Ninja!"

@@ -14,6 +14,8 @@ lending_df['FICO.Score'] = map(lambda x: int(x[0:3]),lending_df['FICO.Range'])
 lending_df['annual_inc'] = map(lambda x: x*12, lending_df['Monthly.Income'])
 lending_df['home_ownership'] = pd.Categorical(lending_df['Home.Ownership']).codes
 
+lending_df.to_csv('loansData2.csv',header = True, index=False)
+
 #First fit
 X = lending_df['annual_inc']
 y = lending_df['int_rate']

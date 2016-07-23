@@ -25,7 +25,9 @@ loansData['IR_TF'].loc[loansData['IR_TF'] >= 12] = 1
 
 loansData['Intercept'] = 1
 
-ind_vars = ['FICO.Score','Amount.Requested','Intercept']
+loansData.to_csv('loansData_clean.csv')
+
+ind_vars = ['FICO.Range','Amount.Requested','Intercept']
 
 logit = sm.Logit(loansData['IR_TF'], loansData[ind_vars])
 result = logit.fit()
